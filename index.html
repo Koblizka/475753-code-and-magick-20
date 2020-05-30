@@ -183,10 +183,11 @@
 <script>
   'use strict';
 
+  var HEIGHT_COEFFICIENT = 1.337;
+
   var fireballSize = 22;
   var wizardSpeed = 3;
   var wizardWidth = 70;
-  var getWizardHeight = 1.337 * wizardWidth;
 
   var getFireballSpeed = function (isLeft) {
     return (isLeft) ? 5 : 2;
@@ -195,6 +196,10 @@
   var getWizardX = function (width) {
     return (width - wizardWidth) / 2;
   };
+
+  var getWizardHeight = function () {
+    return HEIGHT_COEFFICIENT * wizardWidth;
+  }
 
   var getWizardY = function (height) {
     return height / 3;
